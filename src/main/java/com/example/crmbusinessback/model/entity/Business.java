@@ -17,9 +17,6 @@ public class Business {
     @Column(nullable = false, unique = true)
     private String company;
 
-    @Column(nullable = false)
-    private String type;
-
     private String description;
 
     @Column(nullable = false)
@@ -31,11 +28,16 @@ public class Business {
     public Business() {
     }
 
-    public Business(Integer id, String company, String type, String description, Date date, boolean customer) {
+    public Business(Integer id, String company, String description, Date date, boolean customer) {
         this.id = id;
         this.company = company;
-        this.type = type;
         this.description = description;
+        this.date = date;
+        this.customer = customer;
+    }
+
+    public Business(String company, Date date, boolean customer) {
+        this.company = company;
         this.date = date;
         this.customer = customer;
     }
@@ -54,14 +56,6 @@ public class Business {
 
     public void setCompany(String company) {
         this.company = company;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getDescription() {

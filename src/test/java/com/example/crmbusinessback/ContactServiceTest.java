@@ -21,7 +21,6 @@ public class ContactServiceTest{
     @Autowired
     public ContactService contactService;
 
-
     @ParameterizedTest
     @MethodSource("generator")
     public void createOpportunityWhenCompanyDoesntExistAndOnlyContactWhenItExist (Contact firstTime, Contact secondTime){
@@ -36,7 +35,7 @@ public class ContactServiceTest{
 
     private static Stream<Arguments> generator(){
         return Stream.of(
-                Arguments.of(new Contact("Solera","email",new Date(),false), new Contact("Solera","email",new Date(),false)));
+                Arguments.of(new Contact("Solera","email", new Date(),false), new Contact("Solera","email", new Date(),false)));
     }
 
 }

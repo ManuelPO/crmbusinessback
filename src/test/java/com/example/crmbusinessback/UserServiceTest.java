@@ -32,9 +32,4 @@ public class UserServiceTest {
                 Arguments.of(new User("firstAdmin", "12345"), new User("secondAdmin", "22222")));
     }
 
-//    @Test
-//    public void createUser (){
-//        userService.borrarLuego();
-//
-//    }
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,12 +37,5 @@ public class UserService {
         repo.save(user);
         return true;
     }
-
-//    public void borrarLuego(){
-//        User user = new User("firstAdmin", "12345");
-//        createUser(user);
-//        User user2 = new User("secondAdmin", "54321");
-//        createUser(user2);
-//    }
 
 }

@@ -18,7 +18,7 @@ public class Contact {
     private String company;
 
     @Column(nullable = false)
-    private String type;
+    private String contactWay;
 
     private String description;
 
@@ -28,18 +28,18 @@ public class Contact {
     @Column(nullable = false)
     private boolean planned;
 
-    public Contact(Integer id, String company, String type, String description, Date date, boolean planned) {
+    public Contact(Integer id, String company, String contactWay, String description, Date date, boolean planned) {
         this.id = id;
         this.company = company;
-        this.type = type;
+        this.contactWay = contactWay;
         this.description = description;
         this.date = date;
         this.planned = planned;
     }
 
-    public Contact(String company, String type, Date date, boolean planned) {
+    public Contact(String company, String contactWay, Date date, boolean planned) {
         this.company = company;
-        this.type = type;
+        this.contactWay = contactWay;
         this.date = date;
         this.planned = planned;
     }
@@ -62,12 +62,12 @@ public class Contact {
         this.company = company;
     }
 
-    public String getType() {
-        return type;
+    public String getContactWay() {
+        return contactWay;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setContactWay(String contactWay) {
+        this.contactWay = contactWay;
     }
 
     public String getDescription() {

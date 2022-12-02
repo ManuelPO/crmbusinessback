@@ -17,4 +17,5 @@ public class UserController {
     public boolean login(@RequestBody User user){
         return service.login(user);
     }
+
 }
