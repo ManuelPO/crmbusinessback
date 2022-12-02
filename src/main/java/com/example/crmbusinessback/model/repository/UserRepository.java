@@ -12,4 +12,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Query(value ="SELECT * FROM User u WHERE u.username LIKE ?1", nativeQuery = true)
     public Optional<User> findByUsername(String username);
+
+
 }

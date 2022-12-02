@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class UserServiceTest {
@@ -21,14 +21,20 @@ public class UserServiceTest {
 
     @ParameterizedTest
     @MethodSource("generator")
-    public void loginTest (User user){
-        boolean status = userService.login(user);
-        assertTrue(status);
+    public void loginTestWithRightCredentialsAndWithWrongCredentials (User goodUser, User badUser){
+        boolean goodUserStatus = userService.login(goodUser);
+        boolean badUserStatus = userService.login(badUser);
+        assertAll(()->assertTrue(goodUserStatus), ()->assertFalse(badUserStatus));
     }
 
     private static Stream<Arguments> generator(){
         return Stream.of(
-                Arguments.of(new User("firstAdmin", "12345")),
-                Arguments.of(new User("secondAdmin", "54321")));
+                Arguments.of(new User("firstAdmin", "12345"), new User("secondAdmin", "22222")));
     }
+
+//    @Test
+//    public void createUser (){
+//        userService.borrarLuego();
+//
+//    }
 }
