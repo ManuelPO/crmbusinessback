@@ -13,4 +13,7 @@ public interface ContactRepository extends JpaRepository<Contact, Integer> {
     @Query(value = "SELECT * FROM Contact c WHERE c.company LIKE ?1", nativeQuery = true)
     public List<Contact> findByCompany(String company);
 
+    @Query(value = "SELECT * FROM Contact c WHERE c.planned == 1", nativeQuery = true)
+    public List<Contact> findPlanned();
+
 }

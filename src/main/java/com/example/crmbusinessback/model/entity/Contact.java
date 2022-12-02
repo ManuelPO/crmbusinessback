@@ -14,7 +14,7 @@ public class Contact {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String company;
 
     @Column(nullable = false)
@@ -22,7 +22,6 @@ public class Contact {
 
     private String description;
 
-    @Column(nullable = false)
     private Date date;
 
     @Column(nullable = false)

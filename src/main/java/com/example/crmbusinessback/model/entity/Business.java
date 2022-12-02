@@ -19,7 +19,6 @@ public class Business {
 
     private String description;
 
-    @Column(nullable = false)
     private Date date;
 
     @Column(nullable = false)

@@ -46,4 +46,13 @@ public class ContactService {
     public List<Contact> findAll(){
         return contactRepository.findAll();
     }
+
+    public List<Contact> findByCompany (String company){
+        return contactRepository.findByCompany(company);
+    }
+
+    public List<Contact> findPlanned(){
+        return contactRepository.findPlanned();
+    }
+
 }
